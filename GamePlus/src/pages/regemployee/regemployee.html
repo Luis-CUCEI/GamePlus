@@ -1,0 +1,95 @@
+<!--
+  Generated template for the RegemployeePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon>
+          <img src="../assets/imgs/Logo_GamePlus.png" width="35px" height="35px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GamesPlus - Empleado</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #E5E5E5">
+  <ion-card>
+    <ion-card-header>
+      <div align="center">
+        <img src="../assets/icon/card_normal.png" width="250px" height="250px">
+      </div>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Nombre:* </ion-label>
+        <ion-input [(ngModel)]="nombre" type="text" placeholder="Ingresa nombre del empleado"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Apellido Paterno:* </ion-label>
+        <ion-input [(ngModel)]="apellidop" type="text" placeholder="Ingresa primer apellido del empleado"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Apellido Materno:* </ion-label>
+        <ion-input [(ngModel)]="apellidom" type="text" placeholder="Ingresa segundo apellido del empleado"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Correo Electronico:* </ion-label>
+        <ion-input [(ngModel)]="correoe" type="email" placeholder="Ingresa correo del empleado"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Contraseña:* </ion-label>
+        <ion-input [(ngModel)]="contrasena" type="password" placeholder="Ingresa contraseña del empleado"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Confirmacion de contraseña:* </ion-label>
+        <ion-input [(ngModel)]="rcontrasena" type="password" placeholder="Repita la contraseña del usuario."> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Tipo de usuario:* </ion-label>
+        <ion-select [(ngModel)]="nivel_usuario" interface="action-sheet">
+          <ion-option value="2">Empleado/a</ion-option>
+          <ion-option value="3">Gerente</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary">Sucursal*: </ion-label>
+        <ion-select [(ngModel)]="id_sucursal" submitText="Aceptar" cancelText="Cancelar">
+          <ion-option *ngFor="let sucursal of sucursales" value="{{sucursal.id}}">
+            {{sucursal.ubicacion}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <p style="color: #007aff">* Campos obligatorios.</p>
+    </div>
+
+    <div padding>
+      <button [disabled]="this.nombre.length == 0 || this.apellidop.length == 0 || this.apellidom.length == 0
+      || this.correoe.length == 0 || this.contrasena.length == 0 || this.rcontrasena.length == 0"
+              ion-button color="danger" round outline block icon-start (click)="onClickRegister()">
+        <ion-icon>
+          <img src="../assets/icon/plus_degraded.png" style="width : 25px ; height : 25px">
+        </ion-icon>
+        - Registrarme
+      </button>
+    </div>
+
+  </ion-card>
+
+</ion-content>

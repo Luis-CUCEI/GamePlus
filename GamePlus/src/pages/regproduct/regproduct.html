@@ -1,0 +1,67 @@
+<!--
+  Generated template for the RegproductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon>
+          <img src="../assets/imgs/Logo_GamePlus.png" width="35px" height="35px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GamesPlus - Producto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #E5E5E5">
+  <ion-card>
+    <ion-card-header>
+      <div align="center">
+        <img src="../assets/icon/product_plus.png" width="250px" height="250px">
+      </div>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Nombre:* </ion-label>
+        <ion-input [(ngModel)]="nombre" type="text" placeholder="Ingresa el nombre del producto"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Precio:* </ion-label>
+        <ion-input [(ngModel)]="precio" type="number" placeholder="Ingresa el precio del producto">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Fecha de Lanzamiento:* </ion-label>
+        <ion-datetime [(ngModel)]="fecha_lanzamiento" displayFormat="YYYY-MM-DD"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked ion-text color="secondary"> Marca:* </ion-label>
+        <ion-input [(ngModel)]="marca" type="text" placeholder="Ingresa Marca del Producto"> </ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <p style="color: #007aff">* Campos obligatorios.</p>
+    </div>
+
+    <div padding>
+      <button [disabled]="this.nombre.length == 0 || this.precio.length == 0 || this.marca.length == 0"
+              ion-button color="danger" round outline block icon-start (click)="onClickRegister()">
+        <ion-icon>
+          <img src="../assets/icon/plus_degraded.png" style="width : 25px ; height : 25px">
+        </ion-icon>
+        - Registrarme
+      </button>
+    </div>
+
+  </ion-card>
+</ion-content>

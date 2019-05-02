@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon>
+          <img src="../assets/imgs/Logo_GamePlus.png" width="35px" height="35px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GamesPlus - Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background-color: #E5E5E5">
+
+  <ion-card>
+    <img src="../assets/imgs/Usuarios.png"/>
+    <ion-card-content>
+      <ion-card-title text-center>
+        Ingreso Clientes
+      </ion-card-title>
+      <p text-center>
+        Si eres un cliente de nuestras tiendas ingresa aqui, para continuar.
+        <br>
+        ¿Aun no eres cliente?
+        Tambien puedes registrarte para disfrutar todos los beneficios.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-center>
+        <button ion-button clear small color="danger" icon-start (click)="onClickLoginC()">
+          <img src="assets/icon/next_degraded.png" style="width : 25px ; height : 25px">
+          Ingresar
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="danger" icon-start (click)="onClickRegisterC()">
+          <img src="assets/icon/plus_degraded.png" style="width : 25px ; height : 25px">
+          Registrar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <img src="../assets/imgs/Administrador.jpg"/>
+    <ion-card-content>
+      <ion-card-title text-center>
+        Ingreso Empleados
+      </ion-card-title>
+      <p text-center>
+        Ingresa con tu cuenta de empleados para continuar.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col text-center>
+        <button ion-button clear small color="danger" icon-start (click)="onClickLoginE()">
+          <img src="assets/icon/next_degraded.png" style="width : 25px ; height : 25px">
+          Ingresar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

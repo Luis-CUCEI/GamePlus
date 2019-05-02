@@ -1,0 +1,60 @@
+<!--
+  Generated template for the ViewloginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon>
+          <img src="../assets/imgs/Logo_GamePlus.png" width="35px" height="35px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GamesPlus - Ingreso</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #222e50">
+    <div align="center">
+      <img src="../assets/imgs/GamePlus.png">
+    </div>
+    <ion-list>
+
+      <ion-item style="background-color: #222e50">
+        <ion-label floating ion-text color="primary">
+          <img src="../assets/icon/email_degraded.png" style="width : 25px ; height : 25px" align="left">
+           - Correo Electronico:
+        </ion-label>
+        <ion-input [(ngModel)] = "email" type="email" ></ion-input>
+      </ion-item>
+
+      <ion-item style="background-color: #222e50">
+        <ion-label floating ion-text color="primary">
+          <img src="../assets/icon/block_degraded.png" style="width : 25px ; height : 25px" align="left">
+          - Contraseña:
+        </ion-label>
+        <ion-input [(ngModel)] = "password" type="password" ></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button [disabled]="this.email.length == 0 || this.password.length == 0" ion-button color="danger" round block
+                (click)="onClickLogin()">
+          Ingresar
+          <img src="../assets/icon/next_normal.png" style="width : 25px ; height : 25px">
+        </button>
+      </div>
+
+      <div align="center">
+        <p>¿No tienes cuenta?</p>
+        <button [disabled]="this.email.length > 0 || this.password.length > 0" ion-button color="danger"
+                (click)="onClickRegister()" clear icon-start>
+          <ion-icon name='add-circle'></ion-icon>
+          Registrarme
+        </button>
+      </div>
+
+    </ion-list>
+</ion-content>

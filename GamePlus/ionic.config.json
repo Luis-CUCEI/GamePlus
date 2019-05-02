@@ -1,0 +1,51 @@
+{
+  "name": "GamePlus",
+  "integrations": {},
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "http://127.0.0.1:5000/login"
+    },
+    {
+      "path": "/estados",
+      "proxyUrl": "http://127.0.0.1:5000/estados"
+    },
+    {
+      "path": "/clientes/registro",
+      "proxyUrl": "http://127.0.0.1:5000/clientes/registro"
+    },
+    {
+      "path": "/empleados/registro",
+      "proxyUrl": "http://127.0.0.1:5000/empleados/registro"
+    },
+    {
+      "path": "/sucursales",
+      "proxyUrl": "http://127.0.0.1:5000/sucursales"
+    },
+    {
+      "path": "/empleado",
+      "proxyUrl": "http://127.0.0.1:5000/empleado"
+    },
+    {
+      "path": "/municios",
+      "proxyUrl": "http://127.0.0.1:5000/municios"
+    },
+    {
+      "path": "/sucursal/registro",
+      "proxyUrl": "http://127.0.0.1:5000/sucursal/registro"
+    },
+    {
+      "path": "/producto/registro",
+      "proxyUrl": "http://127.0.0.1:5000/producto/registro"
+    },
+    {
+      "path": "/cliente",
+      "proxyUrl": "http://127.0.0.1:5000/cliente"
+    },
+    {
+      "path": "/producto",
+      "proxyUrl": "http://127.0.0.1:5000/producto"
+    }
+  ]
+}

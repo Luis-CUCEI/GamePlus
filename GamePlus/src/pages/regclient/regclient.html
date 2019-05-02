@@ -1,0 +1,96 @@
+<!--
+  Generated template for the RegclientPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon>
+          <img src="../assets/imgs/Logo_GamePlus.png" width="35px" height="35px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GamesPlus - Cliente</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div align="center">
+    <img src="../assets/imgs/register.png" width="250px" height="250px">
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> Nombre:* </ion-label>
+      <ion-input [(ngModel)]="nombre" type="text" placeholder="Ingresa tu nombre"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> Apellido Paterno:* </ion-label>
+      <ion-input [(ngModel)]="apellidop" type="text" placeholder="Ingresa tu Apellido Paterno"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> Apellido Materno:* </ion-label>
+      <ion-input [(ngModel)]="apellidom" type="text" placeholder="Ingresa tu Apellido Materno"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> Correo Electronico:* </ion-label>
+      <ion-input [(ngModel)]="correoe" type="email" placeholder="Ingresa tu Email"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> Contraseña:* </ion-label>
+      <ion-input [(ngModel)]="contrasena" type="password" placeholder="Ingresa una Contraseña"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> Repetir contraseña:* </ion-label>
+      <ion-input [(ngModel)]="rcontrasena" type="password" placeholder="Repita la contraseña"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> Telefono: </ion-label>
+      <ion-input [(ngModel)]="telefono" type="number" placeholder="Ingresa un telefono"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary"> RFC: </ion-label>
+      <ion-input [(ngModel)]="rfc" type="text" placeholder="Ingresa tu RFC"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="secondary">Estado: </ion-label>
+      <ion-select [(ngModel)]="id_estado">
+        <ion-option *ngFor="let estado of estados" [value]="estado.id">
+          {{estado.nombre}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <div>
+    <p style="color: #007aff">* Campos obligatorios.</p>
+    <p align="center">
+      Al dar click en Registrarme, estas aceptando los <button ion-text color="danger" (click)="onClickTerms()">
+      Terminos y Condiciones</button> de GamePlus y estaras de acuerdo con la <button ion-text color="danger" (click)
+      ="onClickPolicies()">Politica/Aviso de Privacidad</button> de nuestro sitio web.
+    </p>
+  </div>
+
+  <div padding>
+    <button ion-button color="danger" round outline block (click)="onClickRegister()"
+    [disabled]="this.nombre.length == 0 || this.apellidop.length == 0 || this.apellidom == 0 ||
+     this.correoe.length == 0 || this.contrasena.length == 0 || this.rcontrasena.length == 0">
+      <img src="../assets/icon/check_plus.png" style="width : 25px ; height : 25px" align="left">
+        - Registrarme
+    </button>
+  </div>
+
+</ion-content>
