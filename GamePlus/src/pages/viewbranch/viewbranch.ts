@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AlertController, Events, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Http} from "@angular/http";
+import {BranchdetailsPage} from "../branchdetails/branchdetails";
 
 /**
  * Generated class for the ViewbranchPage page.
@@ -16,7 +17,9 @@ import {Http} from "@angular/http";
 })
 export class ViewbranchPage {
 
-  branchs = []
+  branchs = [];
+
+  branchDetails = BranchdetailsPage;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -39,6 +42,7 @@ export class ViewbranchPage {
   }
 
   onClickDetalles(i){
-
+    console.log(i);
+    this.navCtrl.push(this.branchDetails, i);
   }
 }

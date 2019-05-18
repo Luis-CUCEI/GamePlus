@@ -1,0 +1,67 @@
+<!--
+  Generated template for the ProductdetailsclientPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon>
+          <img src="../assets/imgs/Logo_GamePlus.png" width="35px" height="35px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GamesPlus - Informacion Producto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cards-bg social-cards" style="background-color: #364156">
+  <ion-card>
+
+    <ion-item style="background-color: #011638">
+      <h2 align="center" ion-text color="secondary">{{nombre}}</h2>
+    </ion-item>
+
+    <img src="/assets/imgs/avatar3.gif">
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/coins_normal.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{precio}}</h2>
+    </ion-item>
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/date_color.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{fecha_lanzamiento}}</h2>
+    </ion-item>
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/machine_color.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{marca}}</h2>
+    </ion-item>
+
+    <div align="center" style="background-color: #011638">
+      <button ion-button round color="secondary" icon-start (click)="onClickBuy(nombre)">
+        <ion-icon name='close'></ion-icon>
+        Comprar
+      </button>
+      <br>
+    </div>
+
+  </ion-card>
+
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>

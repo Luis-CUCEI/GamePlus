@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AlertController, Events, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Http} from "@angular/http";
+import {EmployeedetailsPage} from "../employeedetails/employeedetails";
 
 /**
  * Generated class for the ViewemployeesPage page.
@@ -17,6 +18,7 @@ import {Http} from "@angular/http";
 export class ViewemployeesPage {
 
   employees = [];
+  employeeDetails = EmployeedetailsPage;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -39,6 +41,6 @@ export class ViewemployeesPage {
   }
 
   onClickDetalles(i){
-
+    this.navCtrl.push(this.employeeDetails, i);
   }
 }

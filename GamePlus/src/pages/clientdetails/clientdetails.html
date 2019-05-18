@@ -1,0 +1,89 @@
+<!--
+  Generated template for the ClientdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon>
+          <img src="../assets/imgs/Logo_GamePlus.png" width="35px" height="35px">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GamesPlus - {{apellido_parterno}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cards-bg social-cards" style="background-color: #364156">
+
+  <ion-card>
+
+    <ion-item style="background-color: #011638">
+      <h2 align="center" ion-text color="secondary">{{codigo_cliente}}</h2>
+    </ion-item>
+
+    <img src="/assets/imgs/avatar1.gif">
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/card_normal.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{nombre}}</h2>
+    </ion-item>
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/card_normal.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{apellido_parterno+' '+apellido_materno}}</h2>
+    </ion-item>
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/email_normal.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{correo_electronico}}</h2>
+    </ion-item>
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/phone_color.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{telefono}}</h2>
+    </ion-item>
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/adn_color.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{rfc}}</h2>
+    </ion-item>
+
+    <ion-item style="background-color: #011638">
+      <ion-icon item-start>
+        <img src="../assets/icon/state_color.png" width="25px" height="25px">
+      </ion-icon>
+      <h2 ion-text color="light">{{nombre_estado}}</h2>
+    </ion-item>
+
+  </ion-card>
+
+  <div align="center">
+    <button ion-button color="danger" icon-start (click)="onClickDelete(correo_electronico)">
+      <ion-icon name='close'></ion-icon>
+      Eliminar
+    </button>
+    <br>
+  </div>
+
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>
+

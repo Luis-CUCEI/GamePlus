@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import {AlertController, Events, IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Http} from "@angular/http";
-import {ClientdetailsPage} from "../clientdetails/clientdetails";
 
 /**
- * Generated class for the ViewclientsPage page.
+ * Generated class for the ProductdetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,35 +11,33 @@ import {ClientdetailsPage} from "../clientdetails/clientdetails";
 
 @IonicPage()
 @Component({
-  selector: 'page-viewclients',
-  templateUrl: 'viewclients.html',
+  selector: 'page-productdetails',
+  templateUrl: 'productdetails.html',
 })
-export class ViewclientsPage {
+export class ProductdetailsPage {
 
-  clientes = [];
-  clientDetails = ClientdetailsPage;
+  nombre = '';
+  precio = '';
+  fecha_lanzamiento = '';
+  marca = '';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public http: Http,
               public alertCtrl: AlertController,
               public events: Events) {
-    this.getClients();
+    this.nombre = this.navParams.get('nombre');
+    this.precio = this.navParams.get('precio');
+    this.fecha_lanzamiento = this.navParams.get('fecha_lanzamiento');
+    this.marca = this.navParams.get('marca');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewclientsPage');
+    console.log('ionViewDidLoad ProductdetailsPage');
   }
 
-  getClients() {
-    this.http.get('/cliente').subscribe(data=> {
-      this.clientes = data.json();
-    }, error1 => {
-      console.log("Error");
-    });
+  onClickBuy(nombre){
+
   }
 
-  onClickDetalles(i){
-    this.navCtrl.push(this.clientDetails, i);
-  }
 }

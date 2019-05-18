@@ -20,6 +20,11 @@ import {ViewemployeesPage} from "../pages/viewemployees/viewemployees";
 import {ViewclientsPage} from "../pages/viewclients/viewclients";
 import {ViewbranchPage} from "../pages/viewbranch/viewbranch";
 import {ViewproductPage} from "../pages/viewproduct/viewproduct";
+import {EmployeedetailsPage} from "../pages/employeedetails/employeedetails";
+import {ClientdetailsPage} from "../pages/clientdetails/clientdetails";
+import {BranchdetailsPage} from "../pages/branchdetails/branchdetails";
+import {ProductdetailsPage} from "../pages/productdetails/productdetails";
+import {ProductdetailsclientPage} from "../pages/productdetailsclient/productdetailsclient";
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import {ViewproductPage} from "../pages/viewproduct/viewproduct";
     ViewemployeesPage,
     ViewclientsPage,
     ViewbranchPage,
-    ViewproductPage
+    ViewproductPage,
+    EmployeedetailsPage,
+    ClientdetailsPage,
+    BranchdetailsPage,
+    ProductdetailsPage,
+    ProductdetailsclientPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +70,12 @@ import {ViewproductPage} from "../pages/viewproduct/viewproduct";
     ViewemployeesPage,
     ViewclientsPage,
     ViewbranchPage,
-    ViewproductPage
+    ViewproductPage,
+    EmployeedetailsPage,
+    ClientdetailsPage,
+    BranchdetailsPage,
+    ProductdetailsPage,
+    ProductdetailsclientPage
   ],
   providers: [
     StatusBar,

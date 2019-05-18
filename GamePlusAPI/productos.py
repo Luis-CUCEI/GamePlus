@@ -36,4 +36,4 @@ class Productos:
         #Manejo de errores
         except Exception as e:
             print("Algo salio mal: {}".format(e))
-            return clientes
+            return productos

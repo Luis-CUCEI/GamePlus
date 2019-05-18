@@ -150,6 +150,22 @@ def estados():
         #Retorno de respuesta a Ionic
         return jsonify(response)
 
+@app.route("/estados/<id_estado>", methods= ['POST', 'GET', 'DELETE'])
+def estados_info(id_estado):
+        #Modificacion de Estado
+        if request.method == 'POST':
+                return "True"
+        #Recuperacion de Sucursal
+        elif request.method == 'GET':
+                #Envio de conexion y peticion de datos.
+                userDB = Estados(connection, cursor)
+                response = userDB.recuperar(id_estado)
+                #Retorno de respuesta a Ionic
+                return jsonify(response)
+        #Eliminacion de Sucursal
+        elif request.method == 'DELETE':
+                return "True"
+
 #Prodcutos
 @app.route("/producto/registro/", methods = ['POST'])
 def productos_registro():
@@ -205,12 +221,36 @@ def sucursales():
         #Retorno de respuesta a Ionic
         return jsonify(response)
 
+@app.route("/sucursales/<id_sucursal>", methods= ['POST', 'GET', 'DELETE'])
+def secursal_id(id_sucursal):
+        #Modificacion de Sucursal
+        if request.method == 'POST':
+                return "True"
+        #Recuperacion de Sucursal
+        elif request.method == 'GET':
+                #Envio de conexion y peticion de datos.
+                userDB = Sucursales(connection, cursor)
+                response = userDB.recuperar(id_sucursal)
+                #Retorno de respuesta a Ionic
+                return jsonify(response)
+        #Eliminacion de Sucursal
+        elif request.method == 'DELETE':
+                return "True"
+
 #Municipios
 @app.route("/municios/<id_estado>", methods = ['GET'])
 def municios(id_estado):
         #Envio de conexion y peticion de datos.
         userDB = Municipios(connection, cursor)
         response = userDB.obtener(id_estado)
+        #Retorno de respuesta a Ionic
+        return jsonify(response)
+
+@app.route("/municios/get/<id_municipio>", methods = ['GET'])
+def municios_get(id_municipio):
+        #Envio de conexion y peticion de datos.
+        userDB = Municipios(connection, cursor)
+        response = userDB.recuperar(id_municipio)
         #Retorno de respuesta a Ionic
         return jsonify(response)
 

@@ -40,6 +40,11 @@ export class HomeemployeePage {
   empleados = [
   ];
 
+  sucursales = [
+  ];
+
+  id_sucursal = '';
+
   sucursal = '';
 
   constructor(public navCtrl: NavController,
@@ -122,8 +127,27 @@ export class HomeemployeePage {
     var url = '/empleado/'+this.correoe;
     this.http.get(url).subscribe(data=>{
       this.empleados = data.json();
+      this.getSucursal();
     }, error1 => {
       console.log("Error");
+    });
+  }
+
+  getSucursal() {
+    this.empleados.filter((item)=>{
+      this.id_sucursal = item.id_sucursal;
+    });
+
+    var url = '/sucursales/'+this.id_sucursal;
+    this.http.get(url).subscribe( data=> {
+      this.sucursales = data.json();
+
+      this.sucursales.filter((item)=> {
+        this.sucursal = item.ubicacion;
+      });
+
+    }, error1 => {
+      console.log("Error")
     });
   }
 

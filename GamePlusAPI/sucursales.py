@@ -39,4 +39,27 @@ class Sucursales:
             print("Algo salio mal: {}".format(e))
             return False
 
-
+    def recuperar(self, id_sucursal):
+        #Declaracion de consulta MySQL
+        select = ('SELECT * FROM surcursales WHERE id = %s')
+        sucursales = []
+        #Ejecucion de consulta SQL
+        try:
+            self.cursor.execute(select, (id_sucursal,))
+            resultado = self.cursor.fetchall()
+            #Conversion de datos a formato Json
+            for x in resultado:
+                sucursal = {
+                    'id': x[0],
+                    'ubicacion': x[1],
+                    'codigo_postal': x[2],
+                    'id_estado': x[3],
+                    'id_municipio': x[4],
+                    'horario_inicio': str(x[5]),
+                    'horario_cierre': str(x[6])
+                }
+                sucursales.append(sucursal)
+            return sucursales
+        except Exception as e:
+            print("Algo salio mal: {}".format(e))
+            return sucursales
